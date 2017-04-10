@@ -1,7 +1,8 @@
 # my ignores
-# .DS_Store
-# # end of my ignores
-#
+.DS_Store
+build
+# end of my ignores
+
 # Created by https://www.gitignore.io/api/code,node
 
 ### Code ###
