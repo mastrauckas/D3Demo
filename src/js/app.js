@@ -1,11 +1,10 @@
-class Circle {
-  showCircle() {
-    var app = document.getElementById('app');
-    app.attr('cy', 90);
-    app.attr('r', 30);
-  }
-}
+const svg = d3.select('div')
+      .append('width', 500)
+      .append('height', 500);
 
 
-const circle = Circle();
-circle.showCircle();
+svg.select('circle')
+  .attr('cy', 90)
+  .attr('r', 30)
+  .attr('cy', 90)
+  .attr('r', 30);
