@@ -1,0 +1,31 @@
+env:
+  node: true
+  es6: true
+globals:
+  document: true
+extends:
+  - eslint:recommended
+parserOptions:
+  sourceType: module
+  ecmaVersion: 7
+  ecmaFeatures:
+    impliedStrict: true
+    globalReturn: true
+rules:
+  indent:
+    - error
+    - 2
+    - SwitchCase: 1
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+  no-extra-semi:
+    - error
+  no-console:
+    - 0
