@@ -8,11 +8,11 @@ export default class Circle {
       .attr('width', width);
   }
 
-  draw(x, y, radious) {
+  draw(x, y, radious, fillColor) {
     this.svg.append('circle')
       .attr('cx', x)
       .attr('cy', y)
       .attr('r', radious)
-      .attr('fill', 'orange');
+      .attr('fill', fillColor);
   }
 }
