@@ -1,4 +1,5 @@
-import Circle from './circle';
+import MindMap from './mindMap';
+import mindMaps from '../data/mindMaps.json';
 
-const circle = new Circle('div', 700, 700);
-circle.draw(200, 200, 100, 'orange');
+const mindMap = new MindMap('div', 1000, 1000);
+mindMap.draw(mindMaps);
