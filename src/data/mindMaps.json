@@ -1,33 +1,36 @@
 {
-    "name": "Implementation Coordinator",
-     "x": 750,
-     "y": 200,
-     "radious": 40,
-     "fillColor": "orange",
-     "advance": [
-       {
-         "name": "Entry Level Scrum Master",
-         "radious": 40,
-         "fillColor": "blue"
-       },
-       {
-         "name": "Senior Implementation Coordinator",
-         "radious": 40,
-         "fillColor": "purple"
-       }
-     ],
-     "lateral": [
-       {
-         "name": "Software Tester",
-         "radious": 40,
-         "fillColor": "red"
-       }
-     ],
-     "down": [
-       {
-         "name": "Entry Level Implementation Coordinator",
-         "radious": 40,
-         "fillColor": "yellow"
-       }
-     ]
-  }
+  "name": "Implementation Coordinator",
+  "x": 750,
+  "y": 200,
+  "radious": 13,
+  "fillColor": "orange",
+  "advancement": {
+    "name": "Advancement",
+    "advancements": [
+      {
+        "name": "Entry Level Scrum Master",
+        "radious": 13,
+        "fillColor": "blue"
+      },
+      {
+        "name": "Senior Implementation Coordinator",
+        "radious": 13,
+        "fillColor": "purple"
+      }
+    ]
+  },
+  "lateral": [
+    {
+      "name": "Software Tester",
+      "radious": 13,
+      "fillColor": "red"
+    }
+  ],
+  "down": [
+    {
+      "name": "Entry Level Implementation Coordinator",
+      "radious": 13,
+      "fillColor": "yellow"
+    }
+  ]
+}
