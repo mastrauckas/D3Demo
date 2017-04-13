@@ -30,8 +30,8 @@
   },
   "lateral": {
     "name": "Lateral",
-    "translateX": -120,
-    "translateY": 90,
+    "translateX": -160,
+    "translateY": 0,
     "translateIndex": -220,
     "laterals": [
       {
@@ -45,8 +45,8 @@
   },
   "stepDown": {
     "name": "Step Downs",
-    "translateX": -160,
-    "translateY": 0,
+    "translateX": -120,
+    "translateY": 90,
     "translateIndex": -220,
     "stepDowns": [
       {
