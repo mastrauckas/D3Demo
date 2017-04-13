@@ -3,34 +3,50 @@
   "x": 750,
   "y": 200,
   "radious": 13,
-  "fillColor": "orange",
+  "fillColor": "green",
+  "strokeColor": "black",
+  "strokeWidth":  "1.5",
   "advancement": {
-    "name": "Advancement",
+    "name": "Advance",
     "advancements": [
       {
         "name": "Entry Level Scrum Master",
         "radious": 13,
-        "fillColor": "blue"
+        "fillColor": "blue",
+        "strokeColor": "black",
+        "strokeWidth":  "1"
       },
       {
         "name": "Senior Implementation Coordinator",
         "radious": 13,
-        "fillColor": "purple"
+        "fillColor": "purple",
+        "strokeColor": "black",
+        "strokeWidth":  "1"
       }
     ]
   },
-  "lateral": [
-    {
-      "name": "Software Tester",
-      "radious": 13,
-      "fillColor": "red"
-    }
-  ],
-  "down": [
-    {
-      "name": "Entry Level Implementation Coordinator",
-      "radious": 13,
-      "fillColor": "yellow"
-    }
-  ]
+  "lateral": {
+    "name": "Lateral",
+    "laterals": [
+      {
+        "name": "Software Tester",
+        "radious": 13,
+        "fillColor": "red",
+        "strokeColor": "black",
+        "strokeWidth":  "1"
+      }
+    ]
+  },
+  "stepDown": {
+    "name": "Step Downs",
+    "stepDowns": [
+      {
+        "name": "Entry Level Implementation Coordinator",
+        "radious": 13,
+        "fillColor": "yellow",
+        "strokeColor": "black",
+        "strokeWidth":  "1"
+      }
+    ]
+  }
 }

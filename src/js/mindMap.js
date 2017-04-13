@@ -14,6 +14,33 @@ export default class MindMap {
       this.svgElements = [];
     }
 
+    this.appendChildren({
+      parentMap,
+      childrenMaps: parentMap.advancement.advancements,
+      lineName: parentMap.advancement.name,
+      translateX: -120,
+      translateY: -90,
+      translateIndex: 220
+    });
+
+    this.appendChildren({
+      parentMap,
+      childrenMaps: parentMap.stepDown.stepDowns,
+      lineName: parentMap.stepDown.name,
+      translateX: -120,
+      translateY: 90,
+      translateIndex: -220
+    });
+
+    this.appendChildren({
+      parentMap,
+      childrenMaps: parentMap.lateral.laterals,
+      lineName: parentMap.lateral.name,
+      translateX: -160,
+      translateY: 0,
+      translateIndex: -220
+    });
+
     this.appendMapGroup({
       elementToAppend: this.svg,
       name: parentMap.name,
@@ -21,48 +48,59 @@ export default class MindMap {
       y: parentMap.y,
       radious: parentMap.radious,
       fillColor: parentMap.fillColor,
+      strokeColor: parentMap.strokeColor,
+      strokeWidth: parentMap.strokeWidth,
       isParent: true
     });
-
-    this.appendAdvancement(parentMap);
   }
 
-  appendAdvancement(parentMap) {
-    parentMap.advancement.advancements.forEach(function (item, index) {
-      const advancementMap = {
+  appendChildren(map) {
+    map.childrenMaps.forEach((item, index) => {
+
+      this.appendMapGroup({
         elementToAppend: this.svg,
         name: item.name,
-        x: parentMap.x,
-        y: parentMap.y,
-        radious: parentMap.radious,
+        x: map.parentMap.x,
+        y: map.parentMap.y,
+        radious: item.radious,
         fillColor: item.fillColor,
-        translateX: -120 + (index * 220),
-        translateY: -90,
+        strokeColor: item.strokeColor,
+        strokeWidth: item.strokeWidth,
+        lineName:  map.lineName,
+        translateX: map.translateX + (index * map.translateIndex),
+        translateY: map.translateY,
         isParent: false
-      };
-      this.appendMapGroup(advancementMap);
-    }.bind(this));
+      });
+    });
   }
 
   appendMapGroup(map) {
     const groupMapAndLine = this.svg.append('g');
-    const groupMap = map.isParent ? groupMapAndLine : groupMapAndLine.append('g');
-
-    if (!map.isParent) {
-      groupMap.attr('transform', `translate(${map.translateX},${map.translateY})`);
-    }
-
-    this.appendMap(groupMap, map);
+    let groupMap = null;
 
     if (!map.isParent) {
       this.appendLine({
         elementToAppend: groupMapAndLine,
         startX: map.x,
         startY: map.y,
-        endX: map.translateX,
-        endY: map.translateY
+        endX: map.x + map.translateX,
+        endY: map.y + map.translateY
       });
+
+      this.appendText({
+        elementToAppend: groupMapAndLine,
+        text: map.lineName,
+        x: (map.x + map.translateX + map.x) / 2,
+        y: (map.y + map.translateY + map.y) / 2
+      });
+
+      groupMap = groupMapAndLine.append('g');
+      groupMap.attr('transform', `translate(${map.translateX},${map.translateY})`);
+    } else {
+      groupMap = groupMapAndLine;
     }
+
+    this.appendMap(groupMap, map);
   }
 
   appendMap(group, map) {
@@ -82,7 +120,9 @@ export default class MindMap {
       x: map.x,
       y: map.y,
       radious: map.radious,
-      fillColor: map.fillColor
+      fillColor: map.fillColor,
+      strokeColor: map.strokeColor,
+      strokeWidth: map.strokeWidth
     });
   }
 
@@ -91,7 +131,9 @@ export default class MindMap {
       .attr('cx', map.x)
       .attr('cy', map.y)
       .attr('r', map.radious)
-      .attr('fill', map.fillColor);
+      .attr('fill', map.fillColor)
+      .attr('stroke', map.strokeColor)
+      .attr('stroke-width', map.strokeWidth);
   }
 
   appendText(map) {
@@ -104,9 +146,12 @@ export default class MindMap {
   appendLine(map) {
     console.dir(map);
     map.elementToAppend.append('line')
-      .attr('stroke', 'black')
+      .attr('stroke', 'rgba(20,20,20,0.2)')
+      .attr('fill', 'none')
+      .attr('stroke-width', '1')
+      .attr('opacity', '1')
       .attr('x1', map.startX)
-      .attr('y1', map.tartY)
+      .attr('y1', map.startY)
       .attr('x2', map.endX)
       .attr('y2', map.endY);
   }
