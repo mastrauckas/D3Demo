@@ -18,27 +18,27 @@ export default class MindMap {
       parentMap,
       childrenMaps: parentMap.advancement.advancements,
       lineName: parentMap.advancement.name,
-      translateX: -120,
-      translateY: -90,
-      translateIndex: 220
+      translateX: parentMap.advancement.translateX,
+      translateY: parentMap.advancement.translateY,
+      translateIndex: parentMap.advancement.translateIndex
     });
 
     this.appendChildren({
       parentMap,
       childrenMaps: parentMap.stepDown.stepDowns,
       lineName: parentMap.stepDown.name,
-      translateX: -120,
-      translateY: 90,
-      translateIndex: -220
+      translateX: parentMap.stepDown.translateX,
+      translateY: parentMap.stepDown.translateY,
+      translateIndex: parentMap.stepDown.translateIndex
     });
 
     this.appendChildren({
       parentMap,
       childrenMaps: parentMap.lateral.laterals,
       lineName: parentMap.lateral.name,
-      translateX: -160,
-      translateY: 0,
-      translateIndex: -220
+      translateX: parentMap.lateral.translateX,
+      translateY: parentMap.lateral.translateY,
+      translateIndex: parentMap.lateral.translateIndex
     });
 
     this.appendMapGroup({
