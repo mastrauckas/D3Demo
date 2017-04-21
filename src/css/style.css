@@ -17,3 +17,17 @@ text {
 g {
   text-anchor: middle;
 }
+
+#requements {
+  margin-top: 0;
+}
+
+#positionInformation {
+  float: left;
+  padding-top: 150px;
+  margin-left: 10px;
+}
+
+#svg {
+  float: right;
+}

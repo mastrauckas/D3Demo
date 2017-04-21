@@ -1,11 +1,19 @@
 {
   "name": "Implementation Coordinator",
-  "x": 750,
+  "x": 250,
   "y": 200,
   "radious": 13,
   "fillColor": "green",
   "strokeColor": "black",
   "strokeWidth":  1.5,
+  "positionInformation": {
+    "salary": "$20,000",
+    "officialDocument": "../documents/ImplementationCoordinator.txt",
+    "requirements": [
+      "Implementation Coordinator requirement 1",
+      "Implementation Coordinator requirement 2"
+    ]
+  },
   "advancement": {
     "name": "Advance",
     "translateX": -120,
@@ -17,14 +25,32 @@
         "radious": 13,
         "fillColor": "blue",
         "strokeColor": "black",
-        "strokeWidth":  1
+        "strokeWidth":  1,
+        "positionInformation": {
+          "salary": "$30,000",
+          "officialDocument": "../documents/EntryLevelScrumMaster.txt",
+          "requirements": [
+            "Scrum Master requirement 1",
+            "Scrum Master requirement 2",
+            "Scrum Master requirement 3"
+          ]
+        }
       },
       {
         "name": "Senior Implementation Coordinator",
         "radious": 13,
         "fillColor": "purple",
         "strokeColor": "black",
-        "strokeWidth":  1
+        "strokeWidth":  1,
+        "positionInformation": {
+          "salary": "$40,000",
+          "officialDocument": "../documents/SeniorImplementationCoordinator.txt",
+          "requirements": [
+            "Implementation Coordinator requirement 1",
+            "Implementation Coordinator requirement 2",
+            "Implementation Coordinator requirement 3"
+          ]
+        }
       }
     ]
   },
@@ -39,7 +65,16 @@
         "radious": 13,
         "fillColor": "red",
         "strokeColor": "black",
-        "strokeWidth":  1
+        "strokeWidth":  1,
+        "positionInformation": {
+        "salary": "$35,000",
+        "officialDocument": "../documents/SoftwareTester.txt",
+        "requirements": [
+            "Software Tester requirement 1",
+            "Software Tester requirement 2",
+            "Software Tester requirement 3"
+          ]
+        }
       }
     ]
   },
@@ -54,7 +89,16 @@
         "radious": 13,
         "fillColor": "yellow",
         "strokeColor": "black",
-        "strokeWidth":  1
+        "strokeWidth":  1,
+         "positionInformation": {
+          "salary": "$25,000",
+          "officialDocument": "../documents/EntryLevelImplementationCoordinator.txt",
+          "requirements": [
+            "Implementation Coordinator requirement 1",
+            "Implementation Coordinator requirement 2",
+            "Implementation Coordinator requirement 3"
+          ]
+        }
       }
     ]
   }

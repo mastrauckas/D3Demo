@@ -1,4 +1,5 @@
 import * as D3 from 'd3';
+import PositionInformation from './positionInformation';
 
 export default class MindMap {
   constructor(element, height, width) {
@@ -20,7 +21,7 @@ export default class MindMap {
       lineName: parentMap.advancement.name,
       translateX: parentMap.advancement.translateX,
       translateY: parentMap.advancement.translateY,
-      translateIndex: parentMap.advancement.translateIndex
+      translateIndex: parentMap.advancement.translateIndex,
     });
 
     this.appendChildren({
@@ -41,6 +42,13 @@ export default class MindMap {
       translateIndex: parentMap.lateral.translateIndex
     });
 
+    const positionInformation = new PositionInformation(parentMap.name,
+        parentMap.positionInformation.salary,
+        parentMap.positionInformation.officialDocument,
+        parentMap.positionInformation.requirements);
+
+    positionInformation.updateUi();
+
     this.appendMapGroup({
       elementToAppend: this.svg,
       name: parentMap.name,
@@ -50,6 +58,7 @@ export default class MindMap {
       fillColor: parentMap.fillColor,
       strokeColor: parentMap.strokeColor,
       strokeWidth: parentMap.strokeWidth,
+      positionInformation,
       isParent: true
     });
   }
@@ -69,6 +78,10 @@ export default class MindMap {
         lineName:  map.lineName,
         translateX: map.translateX + (index * map.translateIndex),
         translateY: map.translateY,
+        positionInformation: new PositionInformation(item.name,
+          item.positionInformation.salary,
+          item.positionInformation.officialDocument,
+          item.positionInformation.requirements),
         isParent: false
       });
     });
@@ -122,7 +135,8 @@ export default class MindMap {
       radious: map.radious,
       fillColor: map.fillColor,
       strokeColor: map.strokeColor,
-      strokeWidth: map.strokeWidth
+      strokeWidth: map.strokeWidth,
+      positionInformation: map.positionInformation,
     });
   }
 
@@ -133,7 +147,10 @@ export default class MindMap {
       .attr('r', map.radious)
       .attr('fill', map.fillColor)
       .attr('stroke', map.strokeColor)
-      .attr('stroke-width', map.strokeWidth);
+      .attr('stroke-width', map.strokeWidth)
+      .on('click',() => {
+        map.positionInformation.updateUi();
+      });
   }
 
   appendText(map) {
@@ -144,7 +161,6 @@ export default class MindMap {
   }
 
   appendLine(map) {
-    console.dir(map);
     map.elementToAppend.append('line')
       .attr('stroke', 'rgba(20,20,20,0.2)')
       .attr('fill', 'none')
