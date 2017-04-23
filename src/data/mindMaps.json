@@ -5,10 +5,10 @@
   "radious": 13,
   "fillColor": "green",
   "strokeColor": "black",
-  "strokeWidth":  1.5,
+  "strokeWidth": 1.5,
   "positionInformation": {
     "salary": "$20,000",
-    "officialDocument": "../documents/ImplementationCoordinator.txt",
+    "officialDocument": "http://127.0.0.1:8080/documents/ImplementationCoordinator.txt",
     "requirements": [
       "Implementation Coordinator requirement 1",
       "Implementation Coordinator requirement 2"
@@ -25,10 +25,10 @@
         "radious": 13,
         "fillColor": "blue",
         "strokeColor": "black",
-        "strokeWidth":  1,
+        "strokeWidth": 1,
         "positionInformation": {
           "salary": "$30,000",
-          "officialDocument": "../documents/EntryLevelScrumMaster.txt",
+          "officialDocument": "http://127.0.0.1:8080/documents/EntryLevelScrumMaster.txt",
           "requirements": [
             "Scrum Master requirement 1",
             "Scrum Master requirement 2",
@@ -41,10 +41,10 @@
         "radious": 13,
         "fillColor": "purple",
         "strokeColor": "black",
-        "strokeWidth":  1,
+        "strokeWidth": 1,
         "positionInformation": {
           "salary": "$40,000",
-          "officialDocument": "../documents/SeniorImplementationCoordinator.txt",
+          "officialDocument": "http://127.0.0.1:8080/documents/SeniorImplementationCoordinator.txt",
           "requirements": [
             "Implementation Coordinator requirement 1",
             "Implementation Coordinator requirement 2",
@@ -65,11 +65,11 @@
         "radious": 13,
         "fillColor": "red",
         "strokeColor": "black",
-        "strokeWidth":  1,
+        "strokeWidth": 1,
         "positionInformation": {
-        "salary": "$35,000",
-        "officialDocument": "../documents/SoftwareTester.txt",
-        "requirements": [
+          "salary": "$35,000",
+          "officialDocument": "http://127.0.0.1:8080/documents/SoftwareTester.txt",
+          "requirements": [
             "Software Tester requirement 1",
             "Software Tester requirement 2",
             "Software Tester requirement 3"
@@ -89,10 +89,10 @@
         "radious": 13,
         "fillColor": "yellow",
         "strokeColor": "black",
-        "strokeWidth":  1,
-         "positionInformation": {
+        "strokeWidth": 1,
+        "positionInformation": {
           "salary": "$25,000",
-          "officialDocument": "../documents/EntryLevelImplementationCoordinator.txt",
+          "officialDocument": "http://127.0.0.1:8080/documents/EntryLevelImplementationCoordinator.txt",
           "requirements": [
             "Implementation Coordinator requirement 1",
             "Implementation Coordinator requirement 2",

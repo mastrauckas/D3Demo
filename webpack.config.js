@@ -134,33 +134,5 @@ module.exports = {
       },
     ]
   },
-  plugins,
-  devServer: {
-    //publicPath: './build',
-    port: 3000,
-    quiet: false,
-    noInfo: false,
-    clientLogLevel: 'info',
-    stats: {
-      //stats information here:
-      //https://webpack.js.org/configuration/stats/
-      colors: true,
-      cached: true,
-      hash: true,
-      version: true,
-      timings: true,
-      assets: true,
-      chunks: true,
-      chunkModules: true,
-      chunkOrigins: true,
-      modules: true,
-      reasons: false,
-      children: true,
-      source: true,
-      errors: true,
-      errorDetails: true,
-      warnings: true,
-      publicPath: true
-    },
-  }
+  plugins
 };
