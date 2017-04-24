@@ -1,0 +1,41 @@
+{
+  "name": "Entry Level Implementation Coordinato",
+  "x": 250,
+  "y": 200,
+  "radious": 13,
+  "fillColor": "green",
+  "strokeColor": "black",
+  "strokeWidth": 1,
+  "positionInformation": {
+    "salary": "$25,000",
+    "officialDocument": "../documents/EntryLevelImplementationCoordinator.txt",
+    "requirements": [
+      "Implementation Coordinator requirement 1",
+      "Implementation Coordinator requirement 2",
+      "Implementation Coordinator requirement 3"
+    ]
+  },
+  "advancement": {
+    "name": "Advance",
+    "translateX": -120,
+    "translateY": -90,
+    "translateIndex": 220,
+    "advancements": [
+      {
+        "name": "Implementation Coordinator",
+        "radious": 13,
+        "fillColor": "yellow",
+        "strokeColor": "black",
+        "strokeWidth": 1,
+        "positionInformation": {
+          "salary": "$20,000",
+          "officialDocument": "../documents/ImplementationCoordinator.txt",
+          "requirements": [
+            "Implementation Coordinator requirement 1",
+            "Implementation Coordinator requirement 2"
+          ]
+        }
+      }
+    ]
+  }
+}

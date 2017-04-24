@@ -3,6 +3,7 @@ env:
   es6: true
 globals:
   document: true
+  window: true
 extends:
   - eslint:recommended
 parserOptions:

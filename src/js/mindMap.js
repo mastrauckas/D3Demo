@@ -15,37 +15,44 @@ export default class MindMap {
       this.svgElements = [];
     }
 
-    this.appendChildren({
-      parentMap,
-      childrenMaps: parentMap.advancement.advancements,
-      lineName: parentMap.advancement.name,
-      translateX: parentMap.advancement.translateX,
-      translateY: parentMap.advancement.translateY,
-      translateIndex: parentMap.advancement.translateIndex,
-    });
+    if (parentMap.advancement.advancements !== undefined) {
+      this.appendChildren({
+        parentMap,
+        childrenMaps: parentMap.advancement.advancements,
+        lineName: parentMap.advancement.name,
+        translateX: parentMap.advancement.translateX,
+        translateY: parentMap.advancement.translateY,
+        translateIndex: parentMap.advancement.translateIndex,
+      });
+    }
 
-    this.appendChildren({
-      parentMap,
-      childrenMaps: parentMap.stepDown.stepDowns,
-      lineName: parentMap.stepDown.name,
-      translateX: parentMap.stepDown.translateX,
-      translateY: parentMap.stepDown.translateY,
-      translateIndex: parentMap.stepDown.translateIndex
-    });
+    if (parentMap.stepDown.stepDowns !== undefined) {
+      this.appendChildren({
+        parentMap,
+        childrenMaps: parentMap.stepDown.stepDowns,
+        lineName: parentMap.stepDown.name,
+        translateX: parentMap.stepDown.translateX,
+        translateY: parentMap.stepDown.translateY,
+        translateIndex: parentMap.stepDown.translateIndex
+      });
+    }
 
-    this.appendChildren({
-      parentMap,
-      childrenMaps: parentMap.lateral.laterals,
-      lineName: parentMap.lateral.name,
-      translateX: parentMap.lateral.translateX,
-      translateY: parentMap.lateral.translateY,
-      translateIndex: parentMap.lateral.translateIndex
-    });
+    if (parentMap.lateral.laterals !== undefined) {
+      this.appendChildren({
+        parentMap,
+        childrenMaps: parentMap.lateral.laterals,
+        lineName: parentMap.lateral.name,
+        translateX: parentMap.lateral.translateX,
+        translateY: parentMap.lateral.translateY,
+        translateIndex: parentMap.lateral.translateIndex
+      });
+    }
 
     const positionInformation = new PositionInformation(parentMap.name,
-        parentMap.positionInformation.salary,
-        parentMap.positionInformation.officialDocument,
-        parentMap.positionInformation.requirements);
+      parentMap.positionInformation.salary,
+      parentMap.positionInformation.officialDocument,
+      parentMap.positionInformation.requirements,
+      parentMap.hasOwnMap);
 
     positionInformation.updateUi();
 
@@ -75,13 +82,15 @@ export default class MindMap {
         fillColor: item.fillColor,
         strokeColor: item.strokeColor,
         strokeWidth: item.strokeWidth,
-        lineName:  map.lineName,
+        lineName: map.lineName,
         translateX: map.translateX + (index * map.translateIndex),
         translateY: map.translateY,
         positionInformation: new PositionInformation(item.name,
           item.positionInformation.salary,
           item.positionInformation.officialDocument,
-          item.positionInformation.requirements),
+          item.positionInformation.requirements,
+          item.hasOwnMap,
+          item.mapName),
         isParent: false
       });
     });
@@ -148,7 +157,7 @@ export default class MindMap {
       .attr('fill', map.fillColor)
       .attr('stroke', map.strokeColor)
       .attr('stroke-width', map.strokeWidth)
-      .on('click',() => {
+      .on('click', () => {
         map.positionInformation.updateUi();
       });
   }
@@ -170,5 +179,9 @@ export default class MindMap {
       .attr('y1', map.startY)
       .attr('x2', map.endX)
       .attr('y2', map.endY);
+  }
+
+  remove() {
+    this.svg.remove();
   }
 }

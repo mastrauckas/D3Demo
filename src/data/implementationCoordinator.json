@@ -5,10 +5,11 @@
   "radious": 13,
   "fillColor": "green",
   "strokeColor": "black",
-  "strokeWidth": 1.5,
+  "strokeWidth": 1,
+  "hasOwnMap": false,
   "positionInformation": {
     "salary": "$20,000",
-    "officialDocument": "http://127.0.0.1:8080/documents/ImplementationCoordinator.txt",
+    "officialDocument": "../documents/ImplementationCoordinator.txt",
     "requirements": [
       "Implementation Coordinator requirement 1",
       "Implementation Coordinator requirement 2"
@@ -26,9 +27,10 @@
         "fillColor": "blue",
         "strokeColor": "black",
         "strokeWidth": 1,
+        "hasOwnMap": false,
         "positionInformation": {
           "salary": "$30,000",
-          "officialDocument": "http://127.0.0.1:8080/documents/EntryLevelScrumMaster.txt",
+          "officialDocument": "../documents/EntryLevelScrumMaster.txt",
           "requirements": [
             "Scrum Master requirement 1",
             "Scrum Master requirement 2",
@@ -42,9 +44,10 @@
         "fillColor": "purple",
         "strokeColor": "black",
         "strokeWidth": 1,
+        "hasOwnMap": false,
         "positionInformation": {
           "salary": "$40,000",
-          "officialDocument": "http://127.0.0.1:8080/documents/SeniorImplementationCoordinator.txt",
+          "officialDocument": "../documents/SeniorImplementationCoordinator.txt",
           "requirements": [
             "Implementation Coordinator requirement 1",
             "Implementation Coordinator requirement 2",
@@ -66,9 +69,10 @@
         "fillColor": "red",
         "strokeColor": "black",
         "strokeWidth": 1,
+        "hasOwnMap": false,
         "positionInformation": {
           "salary": "$35,000",
-          "officialDocument": "http://127.0.0.1:8080/documents/SoftwareTester.txt",
+          "officialDocument": "../documents/SoftwareTester.txt",
           "requirements": [
             "Software Tester requirement 1",
             "Software Tester requirement 2",
@@ -90,9 +94,11 @@
         "fillColor": "yellow",
         "strokeColor": "black",
         "strokeWidth": 1,
+        "hasOwnMap": true,
+        "mapName": "entryLevelImplementationCoordinator",
         "positionInformation": {
           "salary": "$25,000",
-          "officialDocument": "http://127.0.0.1:8080/documents/EntryLevelImplementationCoordinator.txt",
+          "officialDocument": "../documents/EntryLevelImplementationCoordinator.txt",
           "requirements": [
             "Implementation Coordinator requirement 1",
             "Implementation Coordinator requirement 2",
